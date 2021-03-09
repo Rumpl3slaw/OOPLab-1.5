@@ -8,18 +8,28 @@ void Student::Init(int kurs, Man man)
 	Setkurs(kurs);
 	Setman(man);
 }
-void Student::Display() const 
+void Student::Display() const
 {
-	cout << "Про людину:" << endl;
 	man.Display();
-	cout << "Курс = " << kurs << endl;
 }
 void Student::Read()
 {
-	int kurs;
+	int kursslav;
 	Man m;
-	cout << "Про людину:" << endl;
+	cout << "Про  людину:" << endl;
 	m.Read();
-	cout << "Введіть курс = ";cin >> kurs;
-	Init(kurs, m);
+	cout << "Введіть курс = ";cin >> kursslav;
+	Init(kursslav, m);
+	cout << "Про людину:" << endl;
+	Kurs(kurs);
+}
+int Student::Kurs(int kurs)
+{
+	int K = kurs;
+	if (kurs < 6)
+	K = kurs + 1;
+	else
+		cout << "6 - Це випускний курс!" <<kurs<< endl;
+	cout << "Курс = " << K << endl;
+	return kurs;
 }

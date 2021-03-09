@@ -19,4 +19,6 @@ public:
 	void Display() const;
 	void Read();
 
+	int Kurs(int kurs);
+
 };
